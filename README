@@ -1,49 +1,59 @@
-# OsDev Project
+OsDev Project
+📖 Description
+OsDev is a hobbyist operating system developed from scratch, primarily for learning and experimentation with low-level systems programming. The project aims to create a minimal 32-bit kernel that can boot, handle basic hardware interrupts, and gradually introduce more advanced OS features. Its philosophy is to provide hands-on experience with OS development, from bootloader to kernel and hardware interaction.
 
-## 📖 Description
-A brief description of your operating system project. What are you trying to build? Is it for learning purposes, a hobby, or something more specific? What are the main goals or philosophy behind it?
+🌟 Current Status
+Boots into protected mode using a custom bootloader.
+Initializes Global Descriptor Table (GDT) and Interrupt Descriptor Table (IDT).
+Handles keyboard interrupts and displays typed characters.
+Supports VGA text mode output for basic screen interaction.
+Source code is organized into C and Assembly for clarity and modularity.
+✨ Features
+Implemented
+Bootloader (GRUB-compatible)
+Protected Mode Switching
+GDT and IDT Setup
+PS/2 Keyboard Driver
+VGA Text Mode Output
+Planned
+Simple Memory Management (Paging)
+Basic Filesystem Support
+User Mode Functionality
+🛠️ Tech Stack & Tools
+Languages: Assembly (NASM/YASM), C
+Build System: Make, GRUB, custom scripts
+Emulator/Testing: QEMU, Bochs, VirtualBox
+Debugger: GDB
+Target Architecture: x86 (32-bit)
+⚙️ Prerequisites
+You will need the following tools installed to build and run OsDev:
 
-*(Example: This is a hobby operating system being developed from scratch for learning purposes. The initial goal is to create a minimal 32-bit kernel capable of booting, handling basic interrupts, and displaying text on the screen.)*
-
-## 🌟 Current Status
-What is the current state of the project? What milestones have you reached?
-
-*(Example: Currently, the OS can boot into a protected mode, has a basic GDT and IDT setup, and can handle keyboard interrupts to display typed characters.)*
-
-## ✨ Features
-List the features that are currently implemented or planned for the near future.
-
-### Implemented
-* Feature 1 (e.g., Bootloader)
-* Feature 2 (e.g., Protected Mode Switching)
-* Feature 3 (e.g., Basic Interrupt Handling)
-* Feature 4 (e.g., PS/2 Keyboard Driver)
-* Feature 5 (e.g., VGA Text Mode Output)
-
-### Planned
-* Feature A (e.g., Simple Memory Management - Paging)
-* Feature B (e.g., Basic Filesystem)
-* Feature C (e.g., User Mode)
-
-## 🛠️ Tech Stack & Tools
-What languages, assemblers, and tools are you using?
-* **Language(s):** (e.g., C, Assembly (NASM/YASM))
-* **Build System:** (e.g., Make, GRUB, custom scripts)
-* **Emulator/Testing:** (e.g., QEMU, Bochs, VirtualBox)
-* **Debugger:** (e.g., GDB)
-* **Target Architecture:** (e.g., x86, x86_64)
-
-## ⚙️ Prerequisites
-What does someone need to have installed to build and run your OS?
-* (e.g., `make`)
-* (e.g., `gcc` or a specific cross-compiler like `i686-elf-gcc`)
-* (e.g., `nasm` or `yasm`)
-* (e.g., `qemu`)
-* (e.g., `grub-mkrescue` or similar for creating bootable images)
-
-## 🚀 Building and Running
-
-### 1. Clone the Repository
-```bash
-git clone [https://github.com/MehmetTektek/OsDev.git](https://github.com/MehmetTektek/OsDev.git)
+make
+gcc (or i686-elf-gcc cross-compiler)
+nasm or yasm
+qemu
+grub-mkrescue (for creating bootable ISO images)
+🚀 Building and Running
+1. Clone the Repository
+bash
+git clone https://github.com/MehmetTektek/OsDev.git
 cd OsDev
+2. Build the OS
+bash
+make
+3. Run in QEMU
+bash
+qemu-system-i386 -cdrom build/os.iso
+📂 Project Structure
+Code
+.
+├── src/            # Source code (C and Assembly files)
+├── boot/           # Bootloader and GRUB config
+├── build/          # Build artifacts and ISO image
+├── Makefile        # Build instructions
+└── README.md       # Project documentation
+🤝 Contributing
+Contributions and suggestions are welcome! Open an issue or submit a pull request if you want to help improve the project.
+
+📝 License
+This project is licensed under the MIT License. See LICENSE for details.
